@@ -1,0 +1,11 @@
+.card {
+  text-align: left;
+}
+
+.card .card-body {
+  color: #212529;
+}
+
+.card ul {
+  list-style-type: square;
+}
