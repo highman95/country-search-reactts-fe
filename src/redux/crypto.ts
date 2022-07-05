@@ -14,7 +14,7 @@ const {
   REACT_APP_CRYPTO_HASH_ALGORITHM,
 } = process.env;
 
-// const password = REACT_APP_CRYPTO_KEY;
+//* const password = REACT_APP_CRYPTO_KEY;
 // const salt = REACT_APP_CRYPTO_SALT;
 const algorithm = REACT_APP_CRYPTO_MAIN_ALGORITHM!;
 const hashAlgorithm = REACT_APP_CRYPTO_HASH_ALGORITHM!;
@@ -60,20 +60,20 @@ const decrypt = (encrypted: string) => {
   // });
 };
 
-export const encryptAndStore = (user: object, key = "user") => {
+export const encryptAndStore = (user: object, key0 = "user") => {
   try {
-    localStorage.setItem(key, encrypt(JSON.stringify(user)));
+    localStorage.setItem(key0, encrypt(JSON.stringify(user)));
   } catch (e) {
     throw new Error("Unable to encrypt data");
   }
 };
 
-export const decryptAndReturn = (key = "user") => {
+export const decryptAndReturn = (key0 = "user") => {
   let user;
   try {
-    user = JSON.parse(decrypt(localStorage.getItem(key)!));
+    user = JSON.parse(decrypt(localStorage.getItem(key0)!));
   } catch (e) {
-    localStorage.removeItem(key);
+    localStorage.removeItem(key0);
   }
 
   return user;

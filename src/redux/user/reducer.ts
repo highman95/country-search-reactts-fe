@@ -11,7 +11,7 @@ const initialState: UserState = user
     }
   : {};
 
-export function users(state = initialState, action: Action) {
+export function users(state = initialState, action: Action = { type: "" }) {
   switch (action.type) {
     case userActionType.LOGIN_REQUEST:
       return {

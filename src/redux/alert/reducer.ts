@@ -2,7 +2,7 @@ import Action from "../../interfaces/action";
 import { AlertState } from "../../interfaces/state";
 import { alertActionType } from "../action-types";
 
-export function alerts(state: AlertState = { isError: false }, action: Action) {
+export function alerts(state: AlertState = { isError: false }, action: Action = { type: "" }) {
   switch (action.type) {
     case alertActionType.SUCCESS:
       return {

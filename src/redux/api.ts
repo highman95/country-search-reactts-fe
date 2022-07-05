@@ -5,14 +5,14 @@ export const baseUrl =
 
 export function headers() {
   const { token } = appSec.decryptAndReturn() || {};
-  const headers = {
+  const headers0 = {
     "Content-Type": "application/json",
   };
 
   return token
     ? {
-        ...headers,
+        ...headers0,
         Authorization: "Bearer " + token,
       }
-    : headers;
+    : headers0;
 }
